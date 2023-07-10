@@ -1,7 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api")
 
 const token = "5834354543:AAFbJBab2H4dpFg2bx0qvWKXo_i1WeCojjo"
-const webAppUrl = "/"
+const webAppUrl = "https://ya.ru"
 
 const bot = new TelegramBot(token, { polling: true })
 
@@ -12,6 +12,14 @@ bot.on("message", async (msg) => {
     if (text === "/start") {
         await bot.sendMessage(chatId, "Ниже появится кнопка, заполни форму", {
             reply_markup: {
+                keyboard: [
+                    [{ text: "Заполнить форму", web_app: { url: webAppUrl } }]
+                ]
+            }
+        })
+
+        await bot.sendMessage(chatId, "Заходи в наш интернет магазин по кнопке ниже", {
+            reply_markup: {
                 inline_keyboard: [
                     [{ text: "Сделать заказ", web_app: { url: webAppUrl } }]
                 ]
@@ -19,3 +27,5 @@ bot.on("message", async (msg) => {
         })
     }
 })
+
+
