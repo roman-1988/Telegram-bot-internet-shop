@@ -1,7 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api")
 
 const token = "5834354543:AAFbJBab2H4dpFg2bx0qvWKXo_i1WeCojjo"
-const webAppUrl = "https://ya.ru"
+const webAppUrl = "https://resplendent-dolphin-46b355.netlify.app/"
 
 const bot = new TelegramBot(token, { polling: true })
 
