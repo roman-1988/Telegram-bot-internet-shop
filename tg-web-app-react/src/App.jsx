@@ -1,7 +1,10 @@
 import { useEffect } from "react"
+import { useTelegram } from "./components/hooks/useTelegram"
 import "./App.css"
 
 const App = () => {
+  const { onToggleButton, tg } = useTelegram()
+
   useEffect(() => {
     tg.ready()
   }, [])
@@ -10,7 +13,7 @@ const App = () => {
     <>
       <h1>Vite + React</h1>
 
-      <button onClick={onClose}>Закрыть</button>
+      <button onClick={onToggleButton}>toggle</button>
     </>
   )
 }
